@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="myApp">
+
+<div ng-include="'http://www.refsnesdata.no/angular_include.asp'"></div>
+
+<script>
+var app = angular.module('myApp', [])
+
+app.config(function($sceDelegateProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist([
+    'http://www.refsnesdata.no/**'
+  ]);
+});
+
+</script>
+
+</body>
+</html>
